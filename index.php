@@ -1,16 +1,26 @@
+
+<?php session_start(); ?>
 <html>
 <head>
     <title>ITEH</title>
 </head>
 <body id="body">
-<button id="aranzmani">Aranzmani</button>
-<button id="putnici">Putnici</button>
+<button id="trips">Aranzmani</button>
+<button id="passengers">Putnici</button>
 <div id="response">
 
-
 </div>
-<?php //require_once "form.php"; ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="functions.js"></script>
+
+<?php loadScripts() ;?>
 </body>
 </html>
+
+<?php
+
+
+function loadScripts()
+{
+    echo "<script src='js/jquery-3.1.1.js.js'></script>";
+    echo "<script src='js/functions.js'></script>";
+    echo "<script src='js/tableFunctions.js'></script>";
+}
