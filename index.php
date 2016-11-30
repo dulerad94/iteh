@@ -23,4 +23,5 @@ function loadScripts()
     echo "<script src='js/jquery-3.1.1.js.js'></script>";
     echo "<script src='js/functions.js'></script>";
     echo "<script src='js/tableFunctions.js'></script>";
+    echo "<script src='js/tripPassenger.js'></script>";
 }

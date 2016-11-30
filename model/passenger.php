@@ -71,7 +71,14 @@ class Passenger
         $sql="UPDATE passengers SET name='$this->name', surname='$this->surname', passportNumber='$this->passportNumber', dayOfBirth='$this->dayOfBirth' where passengerID=$this->passengerID";
         $conn->query($sql);
     }
-
+    public function addTrip($passengerTrip){
+        $this->trips[]=$passengerTrip;
+    }
+    public function findPassengerTripByID($tripID){
+        foreach($this->trips as $passengerTrip){
+            if($passengerTrip->getTrip()->getTripID()==$tripID) return $passengerTrip;
+        }
+    }
 }
 
 ?>

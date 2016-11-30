@@ -4,18 +4,19 @@
 
 $("document").ready(function() {
     $("#trips").click(function(){
-        getData("trips");
+        getData("trips","asc");
     });
     $("#passengers").click(function(){
-        getData("passengers");
+        getData("passengers","asc");
     });
 });
 
-function getData(data){
+function getData(data,sort){
     $.ajax({
         url: 'table.php',
         data: {
-            "table":data
+            "table":data,
+            "sort":sort
         },
         type: "GET",
     }).done(function( table ) {

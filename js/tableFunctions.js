@@ -23,7 +23,21 @@ $(".btnRemove").click(function(){
     table=firstLetter+table;
     deleteData(table,id);
 });
+$(".btnExtend").click(function(){
+    var id=$(this).attr('id').substring($(this).attr('id').indexOf("-")+1);
+    var table=$(this).attr('class').substring($(this).attr('class').indexOf(" ")+1);
+    var url=null;
+    if(table=="trips") url="tripPassengers.php";
+    else url="passengerTrips.php";
+    location.assign(url+"?id="+id);
 
+});
+$("#asc").click(function(){
+    getData("","asc");
+});
+$("#desc").click(function(){
+    getData("","desc");
+});
 function getForm(formName,id){
     location.assign(formName+"?id="+id);
 }
@@ -38,3 +52,4 @@ function deleteData(table,id){
         $("tr#"+id).remove();
     });
 }
+

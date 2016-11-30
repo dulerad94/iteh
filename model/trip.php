@@ -69,7 +69,14 @@ class Trip{
         $sql="UPDATE trips SET name='$this->name',startDate='$this->startDate',endDate='$this->endDate' where tripID=$this->tripID";
         $conn->query($sql);
     }
-
+    public function addPassenger($passengerTrip){
+        $this->passengers[]=$passengerTrip;
+    }
+    public function findPassengerTripByID($passengerID){
+        foreach($this->passengers as $passengerTrip){
+            if($passengerTrip->getPassenger()->getPassengerID()==$passengerID) return $passengerTrip;
+        }
+    }
 
 
 }
